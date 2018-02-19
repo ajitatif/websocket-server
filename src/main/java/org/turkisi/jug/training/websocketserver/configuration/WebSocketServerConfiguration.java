@@ -16,11 +16,10 @@ public class WebSocketServerConfiguration extends AbstractWebSocketMessageBroker
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableSimpleBroker("/topic/rooms");
-        registry.setApplicationDestinationPrefixes("/websocket");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chatWS").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/chatWS").setAllowedOrigins("*");
     }
 }
